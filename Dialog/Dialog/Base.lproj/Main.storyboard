@@ -37,15 +37,39 @@
                                     <action selector="confirmDialogButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dtA-Xq-hXA"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLO-yf-LHC">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="RHe-73-6Gb"/>
+                                </constraints>
+                                <state key="normal" title="Prompt Dialog"/>
+                                <connections>
+                                    <action selector="promptDialogButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FK7-Ra-IxR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="722-vU-cTK">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="XJg-Eh-kng"/>
+                                </constraints>
+                                <state key="normal" title="ActionSheet"/>
+                                <connections>
+                                    <action selector="actionSheetButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f0x-dr-XgN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="MNi-bz-tfG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="ADR-oQ-Cl4"/>
+                            <constraint firstItem="722-vU-cTK" firstAttribute="top" secondItem="gLO-yf-LHC" secondAttribute="bottom" constant="10" id="2F4-T8-0p9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gLO-yf-LHC" secondAttribute="trailing" constant="10" id="9nq-On-Xdu"/>
+                            <constraint firstItem="MNi-bz-tfG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="ADR-oQ-Cl4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cfO-I1-7np" secondAttribute="trailing" constant="10" id="Gl9-nC-rag"/>
+                            <constraint firstItem="gLO-yf-LHC" firstAttribute="top" secondItem="cfO-I1-7np" secondAttribute="bottom" constant="10" id="I2B-14-kvu"/>
                             <constraint firstItem="cfO-I1-7np" firstAttribute="top" secondItem="MNi-bz-tfG" secondAttribute="bottom" constant="10" id="Jis-Ba-9Vz"/>
                             <constraint firstItem="cfO-I1-7np" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="Xwr-o9-enC"/>
                             <constraint firstItem="MNi-bz-tfG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="b2h-kJ-792"/>
+                            <constraint firstItem="722-vU-cTK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="bHb-QX-1S8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MNi-bz-tfG" secondAttribute="trailing" constant="20" id="dbw-Z7-Lqr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="722-vU-cTK" secondAttribute="trailing" constant="10" id="r8Q-EG-6K2"/>
+                            <constraint firstItem="gLO-yf-LHC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="rHk-fD-I5l"/>
                         </constraints>
                     </view>
                 </viewController>

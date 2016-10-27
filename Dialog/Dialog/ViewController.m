@@ -54,6 +54,40 @@
     [self presentViewController:confirm animated:YES completion:nil];
 }
 
+
+// 带一个输入框的Alert
+- (IBAction)promptDialogButtonClick:(UIButton *)sender {
+    UIAlertController *prompt = [UIAlertController alertControllerWithTitle:@"请输入昵称" message:@"昵称必须是人类能看懂的，请勿填写火星文字。" preferredStyle:UIAlertControllerStyleAlert];
+    //增加一个输入框
+    [prompt addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"请输入一个有效的昵称";
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDestructive handler:nil];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSString *str = [prompt.textFields firstObject].text;
+        NSLog(@"%@", str);
+    }];
+    [prompt addAction:cancelAction];
+    [prompt addAction:okAction];
+    [self presentViewController:prompt animated:YES completion:nil];
+}
+
+// ActionSheet
+- (IBAction)actionSheetButtonClick:(UIButton *)sender {
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"请选择一种操作方式" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *videoAction = [UIAlertAction actionWithTitle:@"小视屏" style:UIAlertActionStyleDestructive handler:nil];
+    UIAlertAction *shootAction = [UIAlertAction actionWithTitle:@"抓拍" style:UIAlertActionStyleDefault handler:nil];
+    UIAlertAction *albumAction = [UIAlertAction actionWithTitle:@"从手机相册选择" style:UIAlertActionStyleDefault handler:nil];
+    // style为UIAlertActionStyleCancel的，会单独显示在下面
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    [actionSheet addAction:videoAction];
+    [actionSheet addAction:shootAction];
+    [actionSheet addAction:albumAction];
+    [actionSheet addAction:cancelAction];
+    [self presentViewController:actionSheet animated:YES completion:nil];
+}
+
+
 // 旧版代理方法
 /*
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
