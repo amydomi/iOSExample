@@ -7,6 +7,7 @@
 //
 
 #import "Person.h"
+#import "Room.h"
 
 @implementation Person
 
@@ -26,7 +27,8 @@
 
 // 对象销毁时，释放所有对象的持有
 - (void)dealloc {
-    [_room release];
+    //[_room release];
+    self.room = nil;    // 最好的方法，调用setRoom方法将_room release后并设置为nil
     NSLog(@"%s", __func__);
     [super dealloc];
 }

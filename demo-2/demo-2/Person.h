@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Room.h"
+@class Room;    // .h 文件中的类使用@class声明，提高编译效率,防止互相包含引发的死循环
 
 @interface Person : NSObject {
     Room *_room;
