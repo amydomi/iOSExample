@@ -11,6 +11,18 @@
 
 @implementation Person
 
+- (instancetype)initWithRoom:(Room *)room {
+    if(self = [super init]) {
+        self.room = room;
+    }
+    return self;
+}
+
+// autorelease 常用于类方法实例化对象
++ (instancetype)personWithRoom:(Room *)room {
+    return [[[self alloc] initWithRoom:room] autorelease];
+}
+
 - (Room *)room {
     return _room;
 }

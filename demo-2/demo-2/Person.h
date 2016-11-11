@@ -16,6 +16,9 @@
 // @property的retain参数，自动添加和释放对象的持有
 // @property (retain) Room *room;
 
+- (instancetype)initWithRoom:(Room *)room;
++ (instancetype)personWithRoom:(Room *)room;
+
 - (Room *)room;
 - (void)setRoom:(Room *)room;
 
