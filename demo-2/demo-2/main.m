@@ -47,12 +47,14 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         Person *p1 = [[Person alloc] init];
-        Person *p2 = [[Person alloc] init];
         Room *r1 = [[Room alloc] init];
         p1.room = r1;
         Room *r2 = [[Room alloc] init];
         p1.room = r2; // 更换对象，方法内部释放原对象持有，再将新对象持有+1
         
+        // 谁创建谁释放的原则，类方法创建的对象，由类方法自己释放。
+        Person *p2 = [Person personWithRoom:r1];
+                      
         // 相同的属性赋值，setRoom不做任何操作
         p1.room = r2;
         p1.room = r2;
@@ -68,10 +70,11 @@ int main(int argc, const char * argv[]) {
         [r2 release];
         [r1 release];
         [p1 release];
-        [p2 release];
+        //[p2 release];     // 使用autorelease，不需要再release一次了
         
         // 不要尝试对一个释放的对象进行赋值操作，会报错
         // p2.room = r2;
+        
     }
     return 0;
 }
