@@ -37,7 +37,7 @@
  
  原子性
  nonatomic 多线程不加锁，能快速响应，iOS中常用
- atomic 多线程加锁，响应速度慢，Mac OS中常用
+ atomic （默认）多线程加锁，响应速度慢，Mac OS中常用
  
  内存管理
  assign （默认）正常的getter、setter方法实现，不参与内存管理，常用于C语言基本数据类型，OC对象互相持有时，有一方需要设置为assign
