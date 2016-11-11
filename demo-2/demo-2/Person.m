@@ -25,10 +25,11 @@
     }
 }
 
-// 对象销毁时，释放所有对象的持有
+// 对象销毁时，释放所有对象的持有，将成员变量值改为初始状态 nil
 - (void)dealloc {
     //[_room release];
-    self.room = nil;    // 最好的方法，调用setRoom方法将_room release后并设置为nil
+    //_room = nil;
+    self.room = nil;    // 最好的方法，调用setRoom方法将_room release后并设置为nil，为防止调用僵尸对象的 release 报错
     NSLog(@"%s", __func__);
     [super dealloc];
 }

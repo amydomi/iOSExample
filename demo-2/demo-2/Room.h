@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+@class Person;
 
 @interface Room : NSObject
+
+// 当A中包含B、B中包含A时会造成循环retain，需要将一方改为assign才能避免内存泄漏。
+@property(assign, nonatomic) Person *person;
 
 @end
