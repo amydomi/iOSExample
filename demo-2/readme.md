@@ -17,18 +17,18 @@
     2、在.m文件中再使用#import进行导入。
 
 ###@property参数总结
-读写属性
+#####读写属性
     readwrite （默认）自动实现getter、setter方法
     readonly   只实现getter方法
 
-重命名
+#####重命名
     getter=method 重命名getter的方法名，一般属性为BOOL值时改为 isXXXX 方式。
     setter=method 重命名setter的方法名，很少使用
 
-原子性
+#####原子性
     nonatomic 多线程不加锁，能快速响应，iOS中常用
     atomic 多线程加锁，响应速度慢，Mac OS中常用
 
-内存管理
+#####内存管理
     assign （默认）正常的getter、setter方法实现，不参与内存管理，常用于C语言基本数据类型，OC对象互相持有时，有一方需要设置为assign
     retain  自动添加setter方法中的retain方法的实现，参与内存管理。
