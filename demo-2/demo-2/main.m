@@ -25,6 +25,7 @@
  1、ARC自动管理内存，Xcode4.x版本后新增特性，不需要写任何retain、release、autorelease，编译器会在适当的位置自动加上这写代码。
  2、MRC是手工管理内存，需要程序员自己写retain、release、autorelease
  3、OC中的ARC内存管理和Java不一样，Java是在运行时动态监测对象，进行垃圾回收，OC中的ARC是在编译阶段自动加上retain和release操作
+ 4、MRC对象的释放依赖retainCount（引用计数器），ARC的对象释放依赖强指针，当没有一个强指针指向对象，对象就会被释放。
  
  @property参数总结
  读写属性
@@ -40,8 +41,12 @@
  atomic （默认）多线程加锁，响应速度慢，Mac OS中常用
  
  内存管理
+ MRC:
  assign （默认）正常的getter、setter方法实现，不参与内存管理，常用于C语言基本数据类型，OC对象互相持有时，有一方需要设置为assign
  retain  自动添加setter方法中的retain方法的实现，参与内存管理。
+ ARC:
+ strong 强指针、类似MRC的retain
+ work   弱指针、类似MRC的assign，但C语言基础数据类型请使用assign，work用于弱指针的对象。
  
 */
 int main(int argc, const char * argv[]) {
