@@ -43,6 +43,6 @@
     //_room = nil;
     self.room = nil;    // 最好的方法，调用setRoom方法将_room release后并设置为nil，为防止调用僵尸对象的 release 报错
     NSLog(@"%s", __func__);
-    [super dealloc];
+    [super dealloc];    // ARC 中不需要写 [super dealloc]
 }
 @end

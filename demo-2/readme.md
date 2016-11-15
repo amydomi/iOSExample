@@ -36,4 +36,4 @@
     retain  自动添加setter方法中的retain方法的实现，参与内存管理。
 ######ARC:
     strong 强指针、类似MRC的retain
-    work   弱指针、类似MRC的assign，但C语言基础数据类型请使用assign，work用于弱指针的对象。
+    weak   弱指针、类似MRC的assign，但C语言基础数据类型请使用assign，weak用于弱指针的对象。
